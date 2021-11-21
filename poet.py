@@ -19,7 +19,8 @@ t1,t2=data_provider.next()
 
 def get_hidden_poetry(heading,total_length,temperature = 1.8):
 
-    model =load('Models/{0}.pth'.format(item))
+    download_model_from_google_drive(model_urls['10oo9lkkU44BOFrPmpq5ONOoWHoPZdR5O'], Models, 'poet_model.pth')
+    model =load(os.path.join(Models,'poet_model.pth')
     # 模型千萬記得要轉換成eval模式
     model.eval()
     for  module in model.modules():
